@@ -76,3 +76,20 @@
 .next-button:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 768px) {
+  .links-section {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .links-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .links-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
