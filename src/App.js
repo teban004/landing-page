@@ -9,9 +9,9 @@ const links = [
   { name: 'Toronto Public Libraries', url: 'http://www.tpl.ca/' },
   { name: 'Real Academia Española', url: 'http://www.rae.es/' },
   { name: 'Github', url: 'https://github.com/login' },
-  { name: 'Link 8', url: 'https://www.example.com' },
-  { name: 'Link 9', url: 'https://www.example.com' },
-  { name: 'Link 10', url: 'https://www.example.com' }
+  { name: 'Hotmail', url: 'http://www.hotmail.com/' },
+  { name: 'Gmail', url: 'http://mail.google.com/mail/' },
+  { name: 'Google Translate', url: 'https://translate.google.com/' }
 ];
 
 function App() {
@@ -20,14 +20,14 @@ function App() {
   const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
 
   useEffect(() => {
+
     // Add components to the component section here
     setComponents([
       <iframe title="XE Currency Chart" src="https://www.xe.com/currencycharts/?from=CAD&amp;to=MXN" width="100%" height="500px" />,
       <div>La Liga scores</div>,
       <div>Premier League scores</div>,
       <div>Today's weather for Toronto</div>,
-      <div>Contents of a local page</div>,
-      <div>DuckDuckGo search field</div>
+      <iframe title="Resultados" src="../resultados.php" width="100%" height="500px" />
     ]);
   }, []);
 
@@ -57,6 +57,13 @@ function App() {
   return (
     <div className="App">
       <div className="links-section">
+        <div>
+          <form action="https://duckduckgo.com/">
+            <label for="search-query">Search:</label>
+            <input type="text" id="search-query" name="q" />
+            <button type="submit">Search on DuckDuckGo</button>
+          </form>
+        </div>
         <div className="links-grid">
           {links.map((link, index) => (
             <div
